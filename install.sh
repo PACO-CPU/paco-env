@@ -24,6 +24,16 @@ then
     printf "${ERROR} RISCV variable not found. Getting it from $ENV_PATH/env.sh\n"
     . $ENV_PATH/env.sh
 fi 
+
+# check if libuuid is installed
+pkg-config --exists uuid
+uuid_exits=`echo $?`
+if [ $uuid_exits -eq 1 ] 
+then
+    printf "${ERROR} libuuid is not installed..\n"
+    exit 1
+fi 
+
 #############################
 #
 # Build RISCV toolchain first
@@ -44,14 +54,6 @@ cd $ENV_PATH/riscv-tools-src/
 printf "${CYAN}Building LLVM ...${NC}\n"
 mkdir -p $ENV_PATH/riscv-tools-src/riscv-llvm/build
 cd $ENV_PATH/riscv-tools-src/riscv-llvm/build
-# check if libuuid is installed
-pkg-config --exists uuid
-uuid_exits=`echo $?`
-if [ $uuid_exits -eq 1 ] 
-then
-    printf "${ERROR} libuuid is not installed..\n"
-    exit 1
-fi 
 
 # don't configure twice
 if [ -f config.log ]
