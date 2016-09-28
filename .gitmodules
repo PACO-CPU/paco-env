@@ -1,0 +1,12 @@
+[submodule "qemu"]
+	path = qemu
+	url = https://github.com/PACO-CPU/qemu.git
+[submodule "rocket-soc"]
+	path = rocket-soc
+	url = https://github.com/PACO-CPU/rocket-soc.git
+[submodule "rocket-chip"]
+	path = rocket-chip
+	url = https://github.com/PACO-CPU/rocket-chip.git
+[submodule "riscv-tools-src"]
+	path = riscv-tools-src
+	url = https://github.com/PACO-CPU/riscv-tools-src.git
