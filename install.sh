@@ -31,6 +31,8 @@ fi
 #############################
 
 printf "${CYAN}Building RISCV toolchain ...${NC}\n"
+# create this dir such that the riscv-tests can be installed.
+mkdir -p $(RISCV)/riscv64-unknown-elf/share/riscv-tests
 cd $ENV_PATH/riscv-tools-src/
 . build.sh
 
