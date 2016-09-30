@@ -1,0 +1,11 @@
+delay_addressTranslator = 0
+base_bits = 48
+delay_controller = 0
+incline_bits = 32
+delay_inputDecoder = 0
+inputWords = 3
+interpolationBits = 12
+delay_interpolator = 0
+plaInterconnects = 200
+segmentBits = 7
+selectorBits = 9
